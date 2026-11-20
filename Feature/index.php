@@ -17,3 +17,16 @@ $events = run($conn, "SELECT * FROM events WHERE event_date >= CURDATE() ORDER B
     <a href="register.php" class="btn btn-outline-light">Join Now</a>
   <?php } ?>
 </div>
+<div class="container">
+
+  <h3 class="mb-3">Featured Artworks</h3>
+  <div class="row">
+    <?php if (mysqli_num_rows($featured) == 0) { echo '<p class="text-muted">No featured artworks yet.</p>'; } ?>
+    <?php while ($a = mysqli_fetch_assoc($featured)) { art_card($a); } ?>
+  </div>
+
+  <h3 class="mb-3 mt-4">Latest Artworks</h3>
+  <div class="row">
+    <?php if (mysqli_num_rows($latest) == 0) { echo '<p class="text-muted">No artworks yet.</p>'; } ?>
+    <?php while ($a = mysqli_fetch_assoc($latest)) { art_card($a); } ?>
+  </div>
