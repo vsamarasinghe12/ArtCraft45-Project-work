@@ -101,6 +101,7 @@ INSERT INTO categories (name, description) VALUES
 
 INSERT INTO users (full_name, email, password, role) VALUES
 ('Admin', 'admin@nsbm.lk', '$2y$12$bi4lrD1cRizj63Xw6q5se.t9qQmc3KDaoF0TzwD/PxuguPTcWbynK', 'admin');
+--Admin password encrypted..I attached in report Admin Password.
 
 INSERT INTO events (title, description, event_date, location) VALUES
 ('NSBM Art Exhibition 2026', 'Annual student art and handcraft exhibition.', '2026-12-15', 'NSBM Main Hall');
