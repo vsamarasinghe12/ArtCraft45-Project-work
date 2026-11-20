@@ -20,7 +20,7 @@ if (isset($_POST['add'])) {
     exit;
 }
 
-// Update event
+
 if (isset($_POST['update'])) {
     $title = trim($_POST['title']);
     $desc = trim($_POST['description']);
@@ -37,7 +37,7 @@ if (isset($_POST['update'])) {
     exit;
 }
 
-// Delete event
+
 if (isset($_POST['delete'])) {
     run($conn, "DELETE FROM events WHERE id=?", "i", [(int)$_POST['id']]);
     set_flash('success', 'Event deleted.');
@@ -45,7 +45,7 @@ if (isset($_POST['delete'])) {
     exit;
 }
 
-// Remove one participant
+
 if (isset($_POST['remove_participant'])) {
     run($conn, "DELETE FROM event_registrations WHERE id=?", "i", [(int)$_POST['reg_id']]);
     set_flash('success', 'Participant removed.');
