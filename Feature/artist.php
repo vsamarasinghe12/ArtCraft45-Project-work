@@ -22,3 +22,7 @@ if (isset($_POST['toggle_follow'])) {
     header("Location: artist.php?id=$id");
     exit;
     }
+
+$followers = mysqli_fetch_assoc(run($conn, "SELECT COUNT(*) AS total FROM follows WHERE artist_id=?", "i", [$id]))['total'];
+$following = mysqli_num_rows(run($conn, "SELECT id FROM follows WHERE follower_id=? AND artist_id=?", "ii", [$uid, $id])) > 0;
+$artworks = run($conn, $art_select . " WHERE a.user_id=? AND a.status='approved' ORDER BY a.created_at DESC", "i", [$id]);
