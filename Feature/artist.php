@@ -9,3 +9,16 @@ if (!$artist) {
     header("Location: artists.php");
     exit;
 }
+if (isset($_POST['toggle_follow'])) {
+    require_login();
+    if ($uid != $id) {
+        $has = run($conn, "SELECT id FROM follows WHERE follower_id=? AND artist_id=?", "ii", [$uid, $id]);
+        if (mysqli_num_rows($has) > 0) {
+            run($conn, "DELETE FROM follows WHERE follower_id=? AND artist_id=?", "ii", [$uid, $id]);
+        } else {
+            run($conn, "INSERT INTO follows (follower_id, artist_id) VALUES (?,?)", "ii", [$uid, $id]);
+        }
+    }
+    header("Location: artist.php?id=$id");
+    exit;
+    }
