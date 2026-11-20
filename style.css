@@ -5,7 +5,6 @@ body { background-color: #f8f9fa; }
 .hero { background-color: #198754; color: white; padding: 60px 0; margin-bottom: 30px; }
 footer { margin-top: 40px; padding: 15px 0; background-color: #212529; color: white; text-align: center; }
 
-/* Printing (used by the admin reports page) */
 @media print {
   .navbar, footer, .no-print { display: none !important; }
 }
