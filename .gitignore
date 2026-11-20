@@ -1,3 +1,7 @@
 # uploaded images are not pushed to GitHub
 uploads/*
 !uploads/.gitkeep
+
+#config.php file we not push our repositories
+
+#uploads will empty gitkeep file show it.So we push gitkeep file.
