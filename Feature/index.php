@@ -30,3 +30,18 @@ $events = run($conn, "SELECT * FROM events WHERE event_date >= CURDATE() ORDER B
     <?php if (mysqli_num_rows($latest) == 0) { echo '<p class="text-muted">No artworks yet.</p>'; } ?>
     <?php while ($a = mysqli_fetch_assoc($latest)) { art_card($a); } ?>
   </div>
+ <h3 class="mb-3 mt-4">Upcoming Events</h3>
+  <div class="row">
+    <?php if (mysqli_num_rows($events) == 0) { echo '<p class="text-muted">No upcoming events.</p>'; } ?>
+    <?php while ($ev = mysqli_fetch_assoc($events)) { ?>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100"><div class="card-body">
+          <h5><?php echo e($ev['title']); ?></h5>
+          <p class="mb-1"><?php echo e($ev['event_date']); ?> | <?php echo e($ev['location']); ?></p>
+          <a href="events.php" class="btn btn-sm btn-outline-success">Details</a>
+        </div></div>
+      </div>
+    <?php } ?>
+  </div>
+
+<?php include 'footer.php'; ?>
