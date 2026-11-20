@@ -46,7 +46,7 @@ $categories = run($conn, "SELECT * FROM categories ORDER BY name");
 $artists = run($conn, "SELECT DISTINCT u.id, u.full_name FROM users u JOIN artworks a ON a.user_id=u.id WHERE a.status='approved' ORDER BY u.full_name");
 include 'header.php';
 ?>
-<h2 class="mb-3">Explore Art Gallery</h2>
+<h2 class="mb-3">Art Gallery</h2>
 
 <form method="get" class="row g-2 mb-4">
   <div class="col-md-3"><input type="text" name="q" class="form-control" placeholder="Search title or description" value="<?php echo e($q); ?>"></div>
