@@ -1,0 +1,10 @@
+body { background-color: #f8f9fa; }
+.navbar-brand { font-weight: bold; }
+.art-img { height: 220px; object-fit: cover; }
+.art-big { max-width: 100%; max-height: 500px; }
+.hero { background-color: #198754; color: white; padding: 60px 0; margin-bottom: 30px; }
+footer { margin-top: 40px; padding: 15px 0; background-color: #212529; color: white; text-align: center; }
+
+@media print {
+  .navbar, footer, .no-print { display: none !important; }
+}
