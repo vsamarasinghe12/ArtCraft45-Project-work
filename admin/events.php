@@ -3,7 +3,7 @@ require '../config.php';
 require_admin();
 $page_title = "Manage Events";
 
-// Add event
+
 if (isset($_POST['add'])) {
     $title = trim($_POST['title']);
     $desc = trim($_POST['description']);
